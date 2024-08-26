@@ -1,0 +1,17 @@
+   let existingProd = arrLocalStorageProduct.find((curprod)=> curprod.id === id);
+   if(existingProd && quantity >1 ){
+
+    quantity = Number(existingProd.quantity) + Number( quantity);
+    price = Number( price * quantity);
+    let updateCart = {id,quantity,price};
+    updateCart =  arrLocalStorageProduct.map((curprod)=>{
+      return curprod.id === id ?updateCart :curprod
+    })
+   localStorage.setItem('cartProductLs',JSON.stringify(updateCart))
+   console.log(updateCart)
+   }
+   
+   if(existingProd){
+   //  alert("your Product Is already Present In Your List ")
+    return false;
+   }

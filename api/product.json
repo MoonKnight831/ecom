@@ -1,0 +1,108 @@
+[
+    {
+        "id":1,
+        "name":"Television",
+        "category":"video",
+        "brand":"samsung",
+        "price":9000,
+        "actualp":999,
+        "stock":20,
+        "image":"../public/pics/tv.png",
+        "description":"laptop h-series i7 processor 512gb ssd"
+    },
+    {
+        "id":2,
+        "name":"laptop",
+        "category":"video",
+        "brand":"samsung",
+        "price":50000,
+        "actualp":999,
+
+        "stock":23,
+        "image":"../public/pics/lap.png",
+        "description":"laptop h-series i7 processor 512gb ssd"
+    },
+    {
+        "id":3,
+        "name":"Mobiles",
+        "category":"Entainterment",
+        "brand":"Iphone",
+        "price":70000,
+        "actualp":999,
+
+        "stock":20,
+        "image":"../public/pics/iphone.png",
+        "description":"128GB ROM and 8Gb ram"
+    },
+    {
+        "id":4,
+        "name":"Speaker",
+        "category":"Audio",
+        "brand":"akai",
+        "price":2000,
+        "actualp":999,
+        "stock":20,
+        "image":"../public/pics/speakers.png",
+        "description":"5.1 hifi Sound"
+    },  
+      {
+        "id":5,
+        "name":"Smart Watch",
+        "category":"video",
+        "brand":"samsung",
+        "price":1000,
+        "actualp":999,
+        "stock":20,
+        "image":"../public/pics/watch (1).png",
+        "description":"laptop h-series i7 processor 512gb ssd"
+    },
+    {
+        "id":6,
+        "name":"MacBook",
+        "category":"video",
+        "brand":"Apple",
+        "price":150000,
+        "actualp":999,
+
+        "stock":23,
+        "image":"../public/pics/laptop.png",
+        "description":"256gb ssd and 15.6 inch Display"
+    }  ,
+     {
+        "id":7,
+        "name":"Cartoon Austronaut T-Shirt",
+        "category":"Cloth",
+        "brand":"Addida",
+        "price":1000,
+        "actualp":999,
+
+        "stock":50,
+        "image":"../public/pics/f1.jpg",
+        "description":"Cartoon Austronaut T-Shirt, Is Available for all Sizes"
+    },
+    {
+        "id":8,
+        "name":"Cartoon  T-Shirt",
+        "category":"Cloth",
+        "brand":"Addida",
+        "price":2000,
+        "actualp":999,
+
+        "stock":50,
+        "image":"../public/pics/f2.jpg",
+        "description":"Cartoon T-Shirt, Is Available for all Sizes"
+    },
+    {
+        "id":9,
+        "name":"Artistic   T-Shirt",
+        "category":"Cloth",
+        "brand":"Addida",
+        "price":1500,
+        "actualp":999,
+
+        "stock":50,
+        "image":"../public/pics/f3.jpg",
+        "description":"Cartoon T-Shirt, Is Available for all Sizes"
+    }
+
+]
