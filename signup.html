@@ -7,6 +7,10 @@
     <title>login page</title>
     <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/33315d02f9.js" crossorigin="anonymous"></script>
+  <!-- <script src="sign.js"></script> -->
+   <script type="module" src="sign.js">
+    
+   </script>
 
 </head>
 
@@ -68,13 +72,16 @@
         <div class="pio">
             <div class="form">
                 <form action="" method="post">
-
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username">
                     <label for="Password">Password:</label>
                     <input type="text" id="Password" name="Password">
-                    <p>forget The Password ? <a href="">Press me</a></p>
-                    <button type="submit" class="sub">Click Me</button>
+                    <p>Already a User ?<a href="login1.html">Press me</a></p>
+                    <!-- <input type="check
+                     box"> -->
+                    <button type="submit" class="sub" id="submit">Click Me</button>
 
                 </form>
             </div>
@@ -93,7 +100,7 @@
             align-items: center;
             /* justify-content: center; */
         }
-           label{
+        label{
           font-size: 20px;
           font-weight: 300;
           color: #f1f1f1;
@@ -106,7 +113,6 @@
             text-decoration: underline;
             color: rgb(172, 172, 189);
         }
-
 
         .pio {
             height: 400px;
