@@ -1,0 +1,112 @@
+import { getCartProductFromLS } from "./getCartProducts";
+import { showToast } from "./showToast";
+import { updateCartValue } from "./updateCartValue";
+getCartProductFromLS();
+export const addToCart = (event, id, stock) => {
+  let arrLocalStorageProduct = getCartProductFromLS();
+
+  const currentProdElem = document.querySelector(`#card${id}`);
+  let quantity = currentProdElem.querySelector(".productQuantity").innerText;
+  let price = currentProdElem.querySelector(".productPrice").innerText;
+
+  // console.log(quantity,price)
+  price = price.replace("₹", "");
+
+  let existingProd = arrLocalStorageProduct.find(
+    (curProd) => curProd.id === id
+  );
+
+  console.log(existingProd);
+
+  if (existingProd && quantity > 1) {
+    quantity = Number(existingProd.quantity) + Number(quantity);
+    price = Number(price * quantity);
+    let updatedCart = { id, quantity, price };
+
+    updatedCart = arrLocalStorageProduct.map((curProd) => {
+      return curProd.id === id ? updatedCart : curProd;
+    });
+    console.log(updatedCart);
+
+    localStorage.setItem("cartProductLS", JSON.stringify(updatedCart));
+    showToast("add", id);
+  }
+
+  if (existingProd) {
+    return false;
+  }
+
+  price = Number(price * quantity);
+  quantity = Number(quantity);
+
+  // let updateCart = {id,quantity,price};
+  arrLocalStorageProduct.push({ id, quantity, price });
+
+  localStorage.setItem("cartProductLS", JSON.stringify(arrLocalStorageProduct));
+  //    cartupdate value
+  updateCartValue(arrLocalStorageProduct);
+  showToast("add", id);
+};
+
+// fetch js
+import { getCartProductFromLS } from "./getCartProducts";
+
+export const fetchQuantityFromCartLS = (id, price) => {
+  let cartProducts = getCartProductFromLS();
+  let existingProduct = cartProducts.find((curProd) => curProd.id === id);
+  let quantity = 1;
+  if (existingProduct) {
+    quantity = existingProduct.quantity;
+    price = existingProduct.price;
+  }
+  return { quantity, price };
+};
+
+const footerHTML = `
+  <footer class="section-footer">
+    <div class="footer-container container">
+      <div class="content_1">
+        <img src="../public/pics/valco-seeklogo-4.svg" alt="logo" />
+        <p>
+          Welcome VALCO EcomStore, <br />
+          your ultimate destination for
+          <br />
+          cutting-edge gadgets!
+        </p>
+        <img src="https://i.postimg.cc/Nj9dgJ98/cards.png" alt="cards" />
+      </div>
+      <div class="content_2">
+        <h4>SHOPPING</h4>
+        <a href="#">Computer Store</a>
+        <a href="#">Laptop Store</a>
+        <a href="#">Accessories</a>
+        <a href="#">Sales & Discount</a>
+      </div>
+      <div class="content_3">
+        <h4>Experience</h4>
+        <a href="./contact.html">Contact Us</a>
+        <a href="" target="_blank"> Payment Method </a>
+        <a href="" target="_blank"> Delivery </a>
+        <a href="" target="_blank"> Return and Exchange </a>
+      </div>
+      <div class="content_4">
+        <h4>NEWSLETTER</h4>
+        <p>
+          Be the first to know about new
+          <br />
+          arrivals, sales & promos!
+        </p>
+        <div class="f-mail">
+          <input type="email" placeholder="Your Email" />
+          <i class="bx bx-envelope"></i>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <div class="f-design">
+      <div class="f-design-txt">
+        <p>Design and Code by VALCO Technical</p>
+      </div>
+    </div>
+  </footer>`;
+
